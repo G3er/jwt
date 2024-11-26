@@ -1,5 +1,5 @@
 const express = require("express");
-const { login, protectedContent } = require("./controllers/authController");
+const { login, protectedContent, whisperContent, getGit } = require("./controllers/authController");
 
 const router = express.Router();
 
@@ -13,5 +13,8 @@ router.post("/login", login);
 
 // Rota protegida
 router.get("/protected", protectedContent);
+router.get("/whisper", whisperContent);
+router.get("/git", getGit);
+router.get("/github", getGit);
 
 module.exports = router;
